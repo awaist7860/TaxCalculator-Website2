@@ -1,0 +1,23 @@
+﻿/*Main colours*/
+/*light green = #ddffcc*/
+/*Bit darker green = #bbff99*/
+
+body {
+    background-color: #ddffcc;
+}
+
+#btnBack {
+    background-color: #bbff99;
+    font: bold, 18px, Calibri;
+    width: 75px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#btnCalcualte {
+    background-color: #bbff99;
+    font: bold, 18px, Calibri;
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
