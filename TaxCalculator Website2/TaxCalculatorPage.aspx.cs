@@ -11,9 +11,9 @@ public partial class TaxCalculatorPage : System.Web.UI.Page
     //52 weeks for 1 year       Done
     //12 months for 1 year      Done
     //1 year                    Done
-    //National income tax done
-    //Scottish income tax done
-
+    //National income tax   done
+    //Scottish income tax   done
+    //Employee National income tax
 
     //If the new code doesnt work then add this in
 
@@ -88,10 +88,12 @@ protected void Page_Load(object sender, EventArgs e)
         if (chkScotYes.Checked)
         {
             scotishTaxCalulation();
+            nationalInsurance();
         }
         else
         {
             britishTaxCalculation();
+            nationalInsurance();
         }
         
     }
@@ -332,6 +334,32 @@ protected void Page_Load(object sender, EventArgs e)
         else
         {
             lblYearlyPay.Text = "Please enter a valid number";
+        }
+    }
+
+    public void nationalInsurance()
+    {
+        double minTax;
+        minTax = System.Convert.ToDouble(lblHidden.Text);   //This is one years pay
+        double weekpay;
+        weekpay = minTax / 52;
+        if (weekpay<= 166)
+        {
+            lblNatinalInsurance.Text = weekpay.ToString();
+        }
+        else if(weekpay >=167 && weekpay <= 962)
+        {
+            weekpay = weekpay * 0.12;
+            lblNatinalInsurance.Text = weekpay.ToString();
+        }
+        else if(weekpay <= 963)
+        {
+            weekpay = weekpay * 0.02;
+            lblNatinalInsurance.Text = weekpay.ToString();
+        }
+        else
+        {
+            lblNatinalInsurance.Text = "Enter a number";
         }
     }
 
