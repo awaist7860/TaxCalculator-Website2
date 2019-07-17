@@ -1,0 +1,23 @@
+﻿/*Main colours*/
+/*light green = #ddffcc*/
+/*Bit darker green = #bbff99*/
+
+body {
+    background-color: #ddffcc;
+}
+#btnCalcPage {
+    background-color: #bbff99;
+    font: bold, 26px, Calibri;
+    width: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 10%;
+}
+#btnHome {
+    background-color: #bbff99;
+    font: bold, 26px, Calibri;
+    width: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
