@@ -64,6 +64,8 @@ protected void Page_Load(object sender, EventArgs e)
         // hour = amount * time;
         //lblYearlyPay.Text = hour.ToString();
 
+        
+
         if (chkHour.Checked)
         {
             hourlyPay();//Calls the hourPay method
@@ -95,7 +97,37 @@ protected void Page_Load(object sender, EventArgs e)
             britishTaxCalculation();
             nationalInsurance();
         }
-        
+
+        displayingResults();
+    }
+
+    public void displayingResults()
+    {
+        double yearResult = System.Convert.ToDouble(lblYearlyPay.Text);
+        double monthResult = System.Convert.ToDouble(lblMonthlyPay.Text);
+        double weekResult = System.Convert.ToDouble(lblWeeklyPay.Text);
+        double yearlyNationalInsurance;
+        double monthlyNationalInsurance;
+        double weeklyNationalInsurance;
+        double NI;
+
+        double yearlyTotalPay;
+        double monthlyTotalPay;
+        double weeklyTotalPay;
+
+        NI = System.Convert.ToDouble(lblNatinalInsurance.Text);
+
+        yearlyNationalInsurance = NI * 52;
+        monthlyNationalInsurance = NI * 4;
+        weeklyNationalInsurance = NI;
+
+        yearlyTotalPay = yearResult - yearlyNationalInsurance;
+        monthlyTotalPay = monthResult - monthlyNationalInsurance;
+        weeklyTotalPay = weekResult - weeklyNationalInsurance;
+
+        lblYearReult.Text = yearlyTotalPay.ToString();
+        lblMonthResult.Text = monthlyTotalPay.ToString();
+        lblWeekResult.Text = weeklyTotalPay.ToString();
     }
 
     public void hourlyPay()//HourlyPay
@@ -206,9 +238,9 @@ protected void Page_Load(object sender, EventArgs e)
             //No tax is payed on anything below 12500
             double weekly = minTax / 52;
             double month = minTax / 12;
-            lblYearlyPay.Text = "£" + minTax.ToString() + " Yearly Pay";
-            lblMonthlyPay.Text = "£" + month.ToString() + " Monthly Pay";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay";
+            lblYearlyPay.Text = minTax.ToString();
+            lblMonthlyPay.Text = month.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
         }
         //All these if satments are for the english tax
         #region englishTax
@@ -221,9 +253,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text =  weekly.ToString();
         }
         else if(minTax >= 50001 && minTax <= 150000)
         {
@@ -234,9 +266,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
         }
         else if(minTax >= 150001)
         {
@@ -246,9 +278,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
         }
         #endregion
         else
@@ -273,9 +305,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay" + " + Scotish Tax";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay" + " + Scotish Tax";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay" + " + Scotish Tax";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString() ;
             chkScotYes.Checked = false;
         }
         else if (minTax >= 14551 && minTax <= 24945)
@@ -286,9 +318,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay" + " + Scotish Tax";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay" + " + Scotish Tax";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay" + " + Scotish Tax";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
             chkScotYes.Checked = false;
         }
         else if (minTax >= 24946 && minTax <= 43430)
@@ -299,9 +331,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay" + " + Scotish Tax";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay" + " + Scotish Tax";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay" + " + Scotish Tax";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
             chkScotYes.Checked = false;
         }
         else if (minTax >= 43431 && minTax <= 150000)
@@ -312,9 +344,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay" + " + Scotish Tax";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay" + " + Scotish Tax";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay" + " + Scotish Tax";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
             chkScotYes.Checked = false;
         }
         else if (minTax >= 150001)
@@ -325,9 +357,9 @@ protected void Page_Load(object sender, EventArgs e)
             netYear = minTax - yearly;
             double monthly = netYear / 12;
             double weekly = netYear / 52;
-            lblYearlyPay.Text = "£" + netYear.ToString() + " Yearly Pay" + " + Scotish Tax";
-            lblMonthlyPay.Text = "£" + monthly.ToString() + " Monthly Pay" + " + Scotish Tax";
-            lblWeeklyPay.Text = "£" + weekly.ToString() + " Weekly Pay" + " + Scotish Tax";
+            lblYearlyPay.Text = netYear.ToString();
+            lblMonthlyPay.Text = monthly.ToString();
+            lblWeeklyPay.Text = weekly.ToString();
             chkScotYes.Checked = false;
         }
         #endregion
@@ -342,6 +374,10 @@ protected void Page_Load(object sender, EventArgs e)
         double minTax;
         minTax = System.Convert.ToDouble(lblHidden.Text);   //This is one years pay
         double weekpay;
+        double middlePay;
+        double middleAmount;
+        double overallAmount;
+        double takenAmount;
         weekpay = minTax / 52;
         if (weekpay<= 166)
         {
@@ -351,19 +387,25 @@ protected void Page_Load(object sender, EventArgs e)
         {
             weekpay = weekpay * 0.12;
             lblNatinalInsurance.Text = weekpay.ToString();
+            //middleAmount = weekpay;
         }
-        else if(weekpay <= 963)
+        else if(weekpay >= 963)
         {
-            weekpay = weekpay * 0.02;
-            lblNatinalInsurance.Text = weekpay.ToString();
+            middlePay = 962 * 0.12;
+            lblHidden2.Text = middlePay.ToString();
+            takenAmount = weekpay - 962;
+            middleAmount = takenAmount * 0.02;
+            overallAmount = middlePay + middleAmount;
+            lblNatinalInsurance.Text = overallAmount.ToString();
         }
         else
         {
             lblNatinalInsurance.Text = "Enter a number";
         }
+        
     }
 
-
+    
     protected void chkHour_CheckedChanged(object sender, EventArgs e)
     {
         //hourlyPay();
