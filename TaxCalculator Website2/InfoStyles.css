@@ -19,5 +19,32 @@ body {
     width: 200px;
     padding-top: 15px;
     padding-bottom: 15px;
-    
+}
+P {
+    margin-left: 5%;
+    margin-right: 40%;
+}
+#TaxHead {
+    margin-left: 5%;
+    margin-right: 40%;
+}
+#IncomeTaxHead {
+    margin-left: 5%;
+    margin-right: 40%;
+}
+#CalcHead {
+    margin-left: 5%;
+    margin-right: 40%;
+}
+#ReferencesHead {
+    margin-left: 5%;
+    margin-right: 40%;
+}
+#DisclaimerHead {
+    margin-left: 5%;
+    margin-right: 40%;
+}
+#SocialHead {
+    margin-left: 5%;
+    margin-right: 40%;
 }

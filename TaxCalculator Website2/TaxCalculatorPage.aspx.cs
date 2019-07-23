@@ -445,4 +445,9 @@ protected void Page_Load(object sender, EventArgs e)
     {
         Response.Redirect("~/Home.aspx");
     }
+
+    protected void btnInfo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/InfoPage.aspx");
+    }
 }

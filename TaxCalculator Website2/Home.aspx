@@ -19,6 +19,7 @@
 
             <div class="MainBody">
                 <asp:Button ID="btnNextPage" runat="server" Text="Tax Calculator" OnClick="btnNextPage_Click" CssClass="btnNextPage" />
+                <asp:Button ID="btnInfo" runat="server" Text="Info" CssClass="btnInfo" OnClick="btnInfo_Click" />
             </div>
 
             <div id="footer"><!-- This is the footer and its at the bottom of the page.-->

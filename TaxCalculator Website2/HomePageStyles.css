@@ -21,6 +21,15 @@ h1 {
     padding-bottom: 15px;
 }
 
+#btnInfo {
+    background-color: #bbff99;
+    font: bold, 26px, Calibri;
+    width: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 10%;
+}
+
 
 /*Css for the footer*/
 #footer{

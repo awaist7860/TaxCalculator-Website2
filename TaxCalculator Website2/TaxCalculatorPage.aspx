@@ -13,14 +13,14 @@
 
             <!-- code starts here-->
 
-            <div class ="Ttile">
+            <div class ="Title">
                 <h1>Tax Calculator Page</h1>
                 <div id="Back">
                     <asp:Button ID="btnBack" runat="server" Text="Home" CssClass="btnBack" OnClick="btnBack_Click" />
+                    <asp:Button ID="btnInfo" runat="server" Text="Info" Enabled="True" CssClass="btnInfo" OnClick="btnInfo_Click" />
                 </div>
                 <div id ="Pay Amount">
                     <h3>How Much Do You Get Paid?</h3>
-                    <br /><!-- The line breaks-->
                     <asp:Label ID="lblPoundSymbol" runat="server" Text="£" CssClass="lblPoundSymbol"></asp:Label>
                     <asp:TextBox ID="txtAmount" runat="server" CssClass="txtAmount"></asp:TextBox>
                 </div>
@@ -59,14 +59,7 @@
                 </div>
             </div> 
 
-            <br /><!-- The line breaks-->
              
-            <div class="StatePension">
-                <asp:Label ID="lblStatepension" runat="server" Text="Are you over the State Pension age?" CssClass="lblStatepension"></asp:Label>
-                <br /><!-- The line breaks-->
-                <asp:CheckBox ID="chkPensionYes" runat="server" AutoPostBack="True" CssClass="chkPensionYes" Text="Yes" OnCheckedChanged="chkPensionYes_CheckedChanged" />
-                <asp:CheckBox ID="chkPensionNo" runat="server" AutoPostBack="True" CssClass="chkPensionNo" Text="No" />
-            </div>
 
             <div class="Scotland">
                 <h3>Do you live in Scotland</h3>
@@ -74,8 +67,17 @@
                 <asp:CheckBox ID="chkScotNo" runat="server" AutoPostBack="True" Text="No" CssClass="chkScotNo" />
             </div>
 
+            <div class="StatePension">
+                <asp:Label ID="lblStatepension" runat="server" Text="Are you over the State Pension age?" CssClass="lblStatepension"></asp:Label>
+                <br /><!-- The line breaks-->
+                <asp:CheckBox ID="chkPensionYes" runat="server" AutoPostBack="True" CssClass="chkPensionYes" Text="Yes" OnCheckedChanged="chkPensionYes_CheckedChanged" />
+                <asp:CheckBox ID="chkPensionNo" runat="server" AutoPostBack="True" CssClass="chkPensionNo" Text="No" />
+            </div>
+
+
             <div class="Hidden">
-                <asp:Label ID="lblHidden" runat="server" Text="Test" Visible="False"></asp:Label>
+                <asp:Label ID="lblHidden" runat="server" Text="Test1" Visible="False"></asp:Label>
+                <asp:Label ID="lblHidden2" runat="server" Text="Test2" Visible="False"></asp:Label>
             </div>
 
            <!-- <br /><!-- The line breaks-->
@@ -86,9 +88,7 @@
                 <div id="TaxCheckBox">
                     <asp:CheckBox ID="taxChkYes" runat="server" CssClass="taxChkYes" Text="Yes" AutoPostBack="True" OnCheckedChanged="taxChkYes_CheckedChanged" />
                     <asp:CheckBox ID="taxChkNo" runat="server" CssClass="taxChkNo" Text="No" AutoPostBack="True" />
-                    <br /><!-- The line breaks-->
                     <asp:Label ID="lblTaxCodeHiddenLabel" runat="server" Text="Enter your Tax code" Visible="False"></asp:Label>
-                    <br /><!-- The line breaks-->
                     <asp:TextBox ID="txtTaxCodeHiddenTextBox" runat="server" OnTextChanged="txtHiddenTextBox_TextChanged" Visible="False"></asp:TextBox>
                 </div>
             </div>
@@ -101,14 +101,29 @@
             <div class="Results">
                 <h2>Your Estimated Net Pay</h2>
                 <div id="YearlyPay">
-                    <asp:Label ID="lblYearlyPay" runat="server" CssClass="lblYearlyPay"></asp:Label>
+                    <asp:Label ID="lblYearlyPay" runat="server" CssClass="lblYearlyPay" Visible="False"></asp:Label>
                 </div>
                 <div id="MonthlyPay">
-                    <asp:Label ID="lblMonthlyPay" runat="server" CssClass="lblMonthlyPay"></asp:Label>
+                    <asp:Label ID="lblMonthlyPay" runat="server" CssClass="lblMonthlyPay" Visible="False"></asp:Label>
                 </div>
                 <div id="WeeklyPay">
-                    <asp:Label ID="lblWeeklyPay" runat="server" CssClass="lblWeeklyPay"></asp:Label>
+                    <asp:Label ID="lblWeeklyPay" runat="server" CssClass="lblWeeklyPay" Visible="False"></asp:Label>
                 </div>
+                <div id="NatinalInsurance">
+                    <asp:Label ID="lblNatinalInsurance" runat="server" CssClass="lblNatinalInsurance" Visible="False"></asp:Label>
+                </div>
+            </div>
+
+
+            <div class="FinalResults">
+                <asp:Label ID="lblPound1" runat="server" Text="£" CssClass="lblPound1"></asp:Label>
+                <asp:Label ID="lblYearReult" runat="server" Text="Year" CssClass="lblYearReult"></asp:Label>
+                <br /><!-- The line breaks-->
+                <asp:Label ID="lblPound2" runat="server" Text="£" CssClass="lblPound2"></asp:Label>
+                <asp:Label ID="lblMonthResult" runat="server" Text="Month" CssClass="lblMonthResult"></asp:Label>
+                <br /><!-- The line breaks-->
+                <asp:Label ID="lblPound3" runat="server" Text="£" CssClass="lblPound3"></asp:Label>
+                <asp:Label ID="lblWeekResult" runat="server" Text="Week" CssClass="lblWeekResult"></asp:Label>
             </div>
 
         </div>

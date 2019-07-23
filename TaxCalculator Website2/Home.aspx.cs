@@ -16,4 +16,9 @@ public partial class Home : System.Web.UI.Page
     {
         Response.Redirect("~/TaxCalculatorPage.aspx");
     }
+
+    protected void btnInfo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/infoPage.aspx");
+    }
 }
